@@ -1,0 +1,68 @@
+System Design Discussion
+
+Day 5 of the course lecture, 
+Object Oriented Web Design by Ruby language,
+on 7/May/2015
+Graduate School of Hosei University
+
+Topics: Table Structure Design for 
+"Problem Solving Engine"
+
+Goal of the project;
+  is to provide the brain storming platform.
+  The original project names show its aim clearly.
+      Lucas: Let Us Conclude with Assumed Solutions
+	  Spielberg: Solving Problems with Integrated Engine for Listing Beginning Essences of Resulting Gripes
+  Anyone who visit the site can cast his/her problems which we cannot obtain the solutions easily.  Also the visitors can give their ideas to solve the problem, give the facts related to the problems, or extract the causes of the problems.
+  By collecting many people's ideas, finally we want to lead us to the effective solutions to the given problems.
+  For simple questions which some others may have the answers for them, some of the existing WEB sites provide effective public places to get answers.  In this project, we want to design and donate the open source of the Web site which enables us to perform the brain storming, collect many pros/cons opinions, list up possible causes and facts related to the problems, and lead us to the solutions of the problems.
+
+In the original design proposal shown in the last lecture, contained four tables;
+    problems, solutions, causes, and facts.
+
+Problems:
+   ex. There are many wars in the world.
+   ex. Nuclear garbage problems
+   ex. Construction of a nursery school in the residential area
+Causes:
+   ex. There are many wars in the world.
+       --> tribal hostility
+   ex. Nuclear garbage problems
+       --> no final disposal facility
+   ex. Construction of a nursery school in the residential area
+       --> Children are noisy
+
+Discussion-1
+Causes could be the problem itself, so there are many links of
+  problem --> cause(=problem --> cause(=problem -->cause))
+  If the depth of links of problem-causes are too deep, now we can not tell the difference between problems and causes.
+==> We may need to define the word "Problemm," "Cause," and such in the system.
+
+Presentation-1
+  We may need to extract "facts" from the problems, and in those facts, we should points out the "emotional" side, and "logical" side of the facts.
+  The facts should count as the positive effect on the problems or as the negative effect on the problems.
+==> In this presentation, some key factors for the system design were provided.
+    This system may need to handle the "emotional" factors, and "logical" factors.
+	The problem: "Children are noisy," cannot be solved only by the logical factors. The level of the noise (ex sound level 90dB) may not be accepted by the people who claims that the nursery school construction is the problem.
+
+Presentation-2
+  We may need to handle the dissimilarity of problems, causes, and solutions. The reason why the word "dissimilarity" is used instead of "similarity," is that the dissimilarity can be the distance between problems and such, in the context of semantic network. The word "distance" is less comprehended than the word "similarity" or "dissimilarity" by the general public (outside the computer science,) so we may handle the "dissimilarity" in the system.
+
+Presentation-3
+  Just because causes of problems can be another problems, so, the system may become very compricated. We should keep the table design very simple, to handle this confusing problem-cause chain. So, we give "facts" table linked to the solutions, and give the "evaluation score 0 to 10" for each fact.  Also, we give evaluation score also to "solutions" against the "problems."
+  Problems have two links.  One to the facts, and one to the solutions.
+
+Presentation-4
+  We should keep the system design very simple. So we should only give Problem-Causes links.  In case one cause may become the next problem, we ask the web site visitors to give pros/cons vote to for the proposed cause of the problem.  And if the number of pros votes exceed certain level, we may register the "cause" as "fact" in the database, and ask visitors to register "solutions" to the facts.
+
+Discussion-2
+  We may expect two types of visitors;
+(1) who may only want to get solutions against the problem.
+(2) who may willingly join the brain sorming
+  If the Problem-Solution links have become compricated, and level of links has become deeper, the type-1 visitor to the system may be unhappy because he cannot get the solution easily.
+
+  We may want to handle the problems which we cannot easily obtain the solutions, so who may want to get the quick answer from somebody, those people should visit other wab site.  The aim of the system is not to provide the place to get the quick answer but to provide the place for brain storming. So we do not have to regard the deeper links troublesome.
+
+Based on the above presentation by students, and the discussion, we will have merged system design by next week.
+
+Ikuo Kobayashi is responsible for this article.
