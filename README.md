@@ -5,7 +5,8 @@
 
   The original project names show its aim clearly.
 * Lucas: Let Us Conclude with Assumed Solutions
-* Spielberg: Solving Problems with Integrated Engine for Listing Beginning Essences of Resulting Gripes
+* Spielberg: Solving Problems with Integrated Engine for Listing Beginning Essences of Resulting Gripes  
+
   However, I(we) hesitated to use those great names for this project, discussed on the project name, and desided to use this name *Ippeisoba* for this project.
   What is Ippeisoba?  Ask Hosei students at Koganei Campus!  They will easily answer, and take you to Ippeisoba.
 
