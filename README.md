@@ -1,11 +1,18 @@
 # Project Ippeisoba
 
+Ippeisoba: Indexing Problems to Provide Effective Information 
+for Solving Obstacles by Brain Accumulation
+
+This project name 'Ippeisoba' has nothing to do with the real Ippeisoba 
+noodle shop. This is the abbreviation of the above word. 
+
 ## Goal of the project:
   is to provide the brain storming platform, or the Problem Solving Engine.
 
   The original project names show its aim clearly.
 * Lucas: Let Us Conclude with Assumed Solutions
 * Spielberg: Solving Problems with Integrated Engine for Listing Beginning Essences of Resulting Gripes  
+
 
   However, I(we) hesitated to use those great names for this project, discussed on the project name, and desided to use this name *Ippeisoba* for this project.
   What is Ippeisoba?  Ask Hosei students at Koganei Campus!  They will easily answer, and take you to Ippeisoba.
@@ -16,6 +23,8 @@
 ## Project Phase
   Now we are designing the project.
   I, together with the students, are trying to get us accoustomed to using the github, to split the work. We are learning how to design the system and how to work together with github. 
+
+  on 14/May/2015: Modeling the real world 'problems' is very difficult. 
 
 ## This is a Graduate School Lecture material
   I am quite sorry for those who expect to obtain the fruit from this site, but it may take time, because I work on this project only 3 to 5 hours per lecture day(preparing materials, ) 15 lecture days per semester.  So, I work for the system upgrade only 100 hours per year.
