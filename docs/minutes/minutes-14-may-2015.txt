@@ -1,0 +1,42 @@
+System Design Discussion
+
+Day 6 of the course lecture, 
+Object Oriented Web Design by Ruby language,
+on 14/May/2015
+Graduate School of Hosei University
+
+Topics: Inivial View Design for 
+"Problem Solving Engine"
+
+Github Environment; 
+students made clones on their PCs.
+
+Springboard Table Design is shown.
+Now discussed on how the system ask users to input the "Problems" and "comments"
+
+----------- Discussion: ------
+In case, someone want to register the problem:
+"Cats are noisy,"
+to obtain some "Solution" for this. 
+Someone may want to write comment;
+"Is this a problem?"  
+Then, how he/she gives level of this problem?
+Is this a "Fact?" 
+
+According to one student's proposal, the table name "Fact" is not proper.
+We should give the table name "Phenomenon" or "Events."
+
+"Children are noisy." 
+For someone irritated, this could be the fact. 
+
+Problems are problems, for those who cannot ignore the "Facts" or the "Phenomena."
+
+Now we should get into the next stage.
+
+Design the first WEB screen by imaging a senario that: "one person fill in the form to upload a problem to the system," and the other person give comment, or evaluation of the problem level, or solutions.
+
+By imaging the WEB screen, we may need to re-design the table structure, and schema of this Problem Solving Engine system.
+
+Homework: just image and draw the WEB screens (simple rough schetch is enough,) and present your initial WEB view with the senario, how the system is used.
+----------------------
+This memo is written by Ikuo Kobayashi.
