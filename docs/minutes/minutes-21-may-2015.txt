@@ -1,0 +1,95 @@
+System Design Discussion
+
+Day 7 of the course lecture, 
+Object Oriented Web Design using Ruby,
+on 21/May/2015
+Graduate School of Hosei University
+
+Topics: Total Design
+
+Github Environment; 
+    students made clones on their PCs.
+Presentation slides of 4 students;
+   pushed to Github.
+
+----------- Discussion on Presentations ------
+Why Problems to Events relationship is 1 : N?
+Isn't it a N:N relationship?
+　The same events may cause several problems;
+  ex. Local Residents refuse the construction of public facilities;
+      ==> Nuke Garbage Final disposal facilities
+	  ==> Kindergarten / Nursary school construction
+	  ==> Army Base,
+  ex. Polution
+      ==> Health,  ==> Economical Cost,  ==> etc
+When the problem is different, even if the same events caused the 
+different problems, comments on those events from visitors whould be different.
+We want to keep the design simple by avoiding the mixed-up discussion.
+
+------ Final Design Plan ------
+--(Top Screen) -------------------------------
+|
+|               search[__________]
+|
+|   Nuclear Garbage Problem          [123]
+|       :
+|   Nursary School Construction      [ 85]
+|       :
+|   Cats are Noisy                   [  7]
+|
+----------------------------------------------
+Show the problems in descending order of users 
+[Yes] vote.  [Yes]: I agree that this is a problem.
+
+[Users]
+  Any one can self-register to the site, identified by email address.
+  Every one can have one vote to each topics.
+
+  Any one can become a "Problem's owner." (Thread manager.)
+
+[Definitions]
+ * Problem:  If anyone may think "this 'event' is a problem," then,
+        he/she register the event first, and annotate that this is a "Problem."
+	Therefore, all the problems are registered as events. 
+ * Event:  All the facts, incidents, happenings, items are registered as "events."
+     ex. "Nuclear power generation produces lots of garbages."
+	     "Cats are noisy."
+		 "Nursary School should not be constructed in the regidential area."
+		 "Army base is dangerous."
+ * If anyone think that an event without "problem annotation" is a "problem," 
+        he/she can give the annotation to registere as "Problem."
+
+ * Event can have a relational link to another event: "Cause_to." 
+       Causes are the links from other events.
+   Event can have a relational link to another event: "Solution_to."
+     Event:"Nuke Garbage"  has relational link "Cause_to" Event:"Biological Damage."
+	 Event:"Nuke Power Generation" has relational link "Solution_to" Event: "Greenhouse Effect."
+
+ * Cause / Solution are both defined as the relational link tables between events table.
+    These links have three attributes: "Effectivity," "Logicality," and "Emotionality,"
+	     each scores level 0 to 5 votes from each users.
+
+ * Action: is defined to each events.
+     Event:"Cats are noisy."  ==> Action: "Confine cats in cage."
+	 Action belongs_to Events.  Event:Actions => 1:N
+
+ * Problem->Event Annotation:  This annotation is installed as 1:1 relational link.
+    This relational link may have many links to "Public Comments."
+	
+	Design reason: Comments on Events may be different when the root "problems" are different.
+	   Therefore, the public comments are not attached to "Events" directly, but to the 
+	   "Problem-Events" link.
+	This link also have [Agreed] vote, voted by those who also regarded 
+			that the "Problem" had been actually troublesome.
+	This [Agreed] counts are used to decide the order of Top Screen.
+
+ * Events->Action Link.
+    This link accepts "Pros"(I agree that the action seems to work.) or "Cons"(Not useful) votes.
+	The link should have the counters for those.  Also, comments are linked from this relation table.
+
+---------------------------------------------
+Based on the above design, we are going to fix the table design.
+
+Next week, we will split the project into four/five parts, to share the role.
+----------------------
+This memo is written by Ikuo Kobayashi.
