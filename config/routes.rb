@@ -1,4 +1,6 @@
 Rails.application.routes.draw do
+  resources :problem_comments
+  resources :problems
   resources :events
   devise_for :users
   get 'welcome/index'
