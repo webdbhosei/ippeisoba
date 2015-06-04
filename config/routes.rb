@@ -1,4 +1,5 @@
 Rails.application.routes.draw do
+  resources :causes
   resources :problem_comments
   resources :problems
   resources :events
