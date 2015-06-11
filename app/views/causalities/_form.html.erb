@@ -1,0 +1,25 @@
+<%= form_for(@causality) do |f| %>
+  <% if @causality.errors.any? %>
+    <div id="error_explanation">
+      <h2><%= pluralize(@causality.errors.count, "error") %> prohibited this causality from being saved:</h2>
+
+      <ul>
+      <% @causality.errors.full_messages.each do |message| %>
+        <li><%= message %></li>
+      <% end %>
+      </ul>
+    </div>
+  <% end %>
+
+  <div class="field">
+    <%= f.label :src_id %><br>
+    <%= f.number_field :src_id %>
+  </div>
+  <div class="field">
+    <%= f.label :dst_id %><br>
+    <%= f.number_field :dst_id %>
+  </div>
+  <div class="actions">
+    <%= f.submit %>
+  </div>
+<% end %>
