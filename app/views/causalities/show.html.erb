@@ -1,0 +1,14 @@
+<p id="notice"><%= notice %></p>
+
+<p>
+  <strong>Src:</strong>
+  <%= @causality.src_id %>
+</p>
+
+<p>
+  <strong>Dst:</strong>
+  <%= @causality.dst_id %>
+</p>
+
+<%= link_to 'Edit', edit_causality_path(@causality) %> |
+<%= link_to 'Back', causalities_path %>

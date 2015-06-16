@@ -11,7 +11,27 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20150528073405) do
+ActiveRecord::Schema.define(version: 20150605090528) do
+
+  create_table "causalities", force: :cascade do |t|
+    t.integer  "src_id"
+    t.integer  "dst_id"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+  end
+
+  create_table "events", force: :cascade do |t|
+    t.string   "title"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+  end
+
+  create_table "solvabilities", force: :cascade do |t|
+    t.integer  "src_id"
+    t.integer  "dst_id"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+  end
 
   create_table "users", force: :cascade do |t|
     t.string   "email",                  default: "",        null: false

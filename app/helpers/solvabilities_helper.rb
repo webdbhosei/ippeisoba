@@ -1,0 +1,2 @@
+module SolvabilitiesHelper
+end
