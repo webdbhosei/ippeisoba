@@ -1,0 +1,12 @@
+<% menu_items = [
+  { :link => events_path, :name => 'List of Events' },
+  { :link => new_event_path, :name => 'Add new Event' },
+  { :link => problems_path, :name => 'List of Problems' },
+  { :link => new_problem_path, :name => 'Add new Problem' },
+  ] -%>
+<div id="menu_bar">
+  <% menu_items.each_with_index do | item, index | -%>
+    <% if index > 0 %> &nbsp;&nbsp;&nbsp;|&nbsp;&nbsp;&nbsp;<% end -%>
+    <%= menu_link_to item -%>
+  <% end -%>
+</div>
