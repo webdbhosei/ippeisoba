@@ -1,0 +1,37 @@
+<p id="notice"><%= notice %></p>
+
+<h1>Listing Problems</h1>
+
+<table>
+  <thead>
+    <tr>
+      <th>Event</th>
+      <th>User</th>
+      <th>Title</th>
+      <th>Content</th>
+      <th colspan="3"></th>
+    </tr>
+  </thead>
+
+<% @events=Event.all  %>
+
+  <tbody>
+    <% @problems.each do |problem| %>
+      <tr>
+        <td><%= @events.where(id: problem.event_id)[0].title %></td>
+        <td><%= problem.user_id %></td>
+        <td><%= problem.title %></td>
+        <td><%= problem.content %></td>
+        <td><%= link_to 'Show', problem %></td>
+        <td><%= link_to 'Edit', edit_problem_path(problem) %></td>
+        <td><%= link_to 'Destroy', problem, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+        <td><%= link_to 'Show_comments', problems_show_comments_path(problem) %></td>
+      </tr>
+    <% end %>
+  </tbody>
+</table>
+
+<br>
+
+<%= link_to 'New Problem', new_problem_path %>
+<!-- <%= link_to 'make Problem', problems_solva_lists_path %> -->

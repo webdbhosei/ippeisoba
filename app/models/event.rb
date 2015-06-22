@@ -15,4 +15,6 @@ class Event < ActiveRecord::Base
   has_many :d2s_causalities,   class_name: "Causality",   foreign_key: :dst_id
   has_many :causes,    through: :d2s_causalities
 
+  # Problem
+  has_one :problem
 end

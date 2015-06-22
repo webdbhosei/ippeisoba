@@ -1,9 +1,15 @@
 Rails.application.routes.draw do
+  resources :problem_comments
+  get 'problems/show_comments/:id', to: 'problems#show_comments', as: 'problems_show_comments'
+  get 'problems/solva_lists', to: 'problems#solva_lists', as: 'problems_solva_lists'
+  resources :problems
   resources :causalities
   resources :solvabilities
   resources :events
   devise_for :users
   get 'welcome/index'
+  get 'problem_comments/new_id/:id', to: 'problem_comments#new_id', as: 'problem_comments_new_id'
+  
 
   # The priority is based upon order of creation: first created -> highest priority.
   # See how all your routes lay out with "rake routes".

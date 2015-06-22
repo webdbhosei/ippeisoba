@@ -1,0 +1,19 @@
+<p id="notice"><%= notice %></p>
+
+<% @problem.problem_comments.each do |comment| %>
+
+<p>
+  <strong>user:</strong>
+  <%= comment.user_id %>
+</p>
+<p>
+  <strong>Content:</strong>
+  <%= comment.content %>
+<!--  <%= link_to 'Destroy', comment, method: :delete, data: { confirm: 'Are you sure?' } %> -->
+</p>
+
+
+<% end %>|
+
+<%= link_to 'Back', problems_path %>
+<%= link_to 'New Problem comment', problem_comments_new_id_path(@problem) %>

@@ -1,0 +1,17 @@
+<p id="notice"><%= notice %></p>
+
+<p>
+  <strong>Problem:</strong>
+  <%= @problem_comment.problem_id %>
+</p>
+
+<p>
+  <strong>Content:</strong>
+  <%= @problem_comment.content %>
+</p>
+
+<% @problem = Problem.all %>
+<% @problem = @problem.where(id: @problem_comment.problem_id) %>
+
+<%= link_to 'Edit', edit_problem_comment_path(@problem_comment) %> |
+<%= link_to 'Back', problems_show_comments_path(@problem_comment.problem_id) %>
