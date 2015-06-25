@@ -1,15 +1,18 @@
 <p id="notice"><%= notice %></p>
 
-<h1>Listing Problems</h1>
-
-<table>
+<h1><%= t :list_problem_title %></h1>
+<br />
+<%= t :problem_comment %><br />
+<br />
+<table border="1">
   <thead>
     <tr>
       <th>Event</th>
       <th>User</th>
       <th>Title</th>
-      <th>Content</th>
-      <th colspan="3"></th>
+    </tr>
+    <tr>
+      <th colspan="3">Content</th>
     </tr>
   </thead>
 
@@ -17,9 +20,13 @@
     <% @problems.each do |problem| %>
       <tr>
         <td><%= problem.event_id %></td>
-        <td><%= problem.user_id %></td>
+        <td><%= problem.user.email %></td>
         <td><%= problem.title %></td>
-        <td><%= problem.content %></td>
+      </tr>
+      <tr>
+        <td colspan="3"><%= problem.content %></td>
+      </tr>
+      <tr>
         <td><%= link_to 'Show', problem %></td>
         <td><%= link_to 'Edit', edit_problem_path(problem) %></td>
         <td><%= link_to 'Destroy', problem, method: :delete, data: { confirm: 'Are you sure?' } %></td>

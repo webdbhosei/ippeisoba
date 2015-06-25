@@ -14,4 +14,6 @@ class Event < ActiveRecord::Base
   # Causes    : [current event] <--cause--- [Related event]
   has_many :d2s_causalities,   class_name: "Causality",   foreign_key: :dst_id
   has_many :causes,    through: :d2s_causalities
+
+  belongs_to :user
 end
