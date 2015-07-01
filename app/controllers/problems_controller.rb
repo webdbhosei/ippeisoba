@@ -1,4 +1,5 @@
 class ProblemsController < ApplicationController
+  before_filter :authenticate_user!
   before_action :set_problem, only: [:show, :edit, :update, :destroy]
 
   # GET /problems
@@ -25,6 +26,7 @@ class ProblemsController < ApplicationController
   # POST /problems.json
   def create
     @problem = Problem.new(problem_params)
+    @problem.user_id = current_user.id
 
     respond_to do |format|
       if @problem.save
@@ -69,6 +71,6 @@ class ProblemsController < ApplicationController
 
     # Never trust parameters from the scary internet, only allow the white list through.
     def problem_params
-      params.require(:problem).permit(:event_id, :user_id, :title, :content)
+      params.require(:problem).permit(:event_id, :user_id, :title, :content, :user)
     end
 end

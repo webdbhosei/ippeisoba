@@ -12,6 +12,41 @@ p, ol, ul, td {
   line-height: 18px;
 }
 
+div#container{
+  background-color: white;
+  margin: 0 auto;
+  padding: 5px 0 0;
+}
+
+div#header {
+  padding-top: 4px;
+  border-top: 4px solid white;
+}
+
+div#left {
+  float: left;
+  background-color: white;
+  padding: 6px 6px 6px 0;
+}
+
+div#right {
+  float: right;
+  width: 228px;
+  background-color: #e8ffff;
+}
+
+div#footer {
+  background-color: white;
+  border-top: 2px lightgreen solid ;
+  text-align: center;
+  clear: both;
+  width: 100%;
+}
+
+div#menu_bar{
+  color: black;
+}
+
 pre {
   background-color: #eee;
   padding: 10px;

@@ -7,8 +7,22 @@
   <%= csrf_meta_tags %>
 </head>
 <body>
-  <p class="notice"><%= notice %></p>
-  <p class="alert"><%= alert %></p>
-  <%= yield %>
+  <div id="container">
+    <div id="header">
+        <%= image_tag 'banner.gif', :size=>'768x192', :alt =>'Project Ippeisoba'%>
+        <%= render :partial => 'shared/menu_bar' %>
+    </div>
+    <div id='left'>
+      <p class="notice"><%= notice %></p>
+      <p class="alert"><%= alert %></p>
+      <%= yield  %>        
+    </div>
+    <div id='right'>
+        <%= render :partial => 'shared/right_bar' %>
+    </div>
+    <div id='footer'>
+        <%= render :partial => 'shared/footer' %>
+    </div>
+  </div>
 </body>
 </html>
