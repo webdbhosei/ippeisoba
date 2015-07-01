@@ -16,6 +16,8 @@ class SolvabilitiesController < ApplicationController
   # GET /solvabilities/new
   def new
     @solvability = Solvability.new
+    @event_id    = params[:event_id]
+    @direction   = params[:direction] 
   end
 
   # GET /solvabilities/1/edit

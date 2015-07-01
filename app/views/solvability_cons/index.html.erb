@@ -1,0 +1,29 @@
+<p id="notice"><%= notice %></p>
+
+<h1>Listing Solvability Cons</h1>
+
+<table>
+  <thead>
+    <tr>
+      <th>Solvability</th>
+      <th>User</th>
+      <th colspan="3"></th>
+    </tr>
+  </thead>
+
+  <tbody>
+    <% @solvability_cons.each do |solvability_con| %>
+      <tr>
+        <td><%= solvability_con.solvability_id %></td>
+        <td><%= solvability_con.user_id %></td>
+        <td><%= link_to 'Show', solvability_con %></td>
+        <td><%= link_to 'Edit', edit_solvability_con_path(solvability_con) %></td>
+        <td><%= link_to 'Destroy', solvability_con, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+      </tr>
+    <% end %>
+  </tbody>
+</table>
+
+<br>
+
+<%= link_to 'New Solvability con', new_solvability_con_path %>

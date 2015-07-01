@@ -1,9 +1,13 @@
 Rails.application.routes.draw do
+  resources :solvability_cons
+  resources :solvability_pros
+  resources :solvability_pros
   resources :problem_comments
   resources :problems
   resources :causalities
   resources :solvabilities
-  resources :events
+# resources :events
+  resources :events do resources :solvabilities end # nested resources
   devise_for :users
   get 'welcome/index'
 

@@ -1,0 +1,29 @@
+<p id="notice"><%= notice %></p>
+
+<h1>Listing Solvability Pros</h1>
+
+<table>
+  <thead>
+    <tr>
+      <th>Solvability</th>
+      <th>User</th>
+      <th colspan="3"></th>
+    </tr>
+  </thead>
+
+  <tbody>
+    <% @solvability_pros.each do |solvability_pro| %>
+      <tr>
+        <td><%= solvability_pro.solvability_id %></td>
+        <td><%= solvability_pro.user_id %></td>
+        <td><%= link_to 'Show', solvability_pro %></td>
+        <td><%= link_to 'Edit', edit_solvability_pro_path(solvability_pro) %></td>
+        <td><%= link_to 'Destroy', solvability_pro, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+      </tr>
+    <% end %>
+  </tbody>
+</table>
+
+<br>
+
+<%= link_to 'New Solvability pro', new_solvability_pro_path %>

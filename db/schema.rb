@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20150605090528) do
+ActiveRecord::Schema.define(version: 20150625050959) do
 
   create_table "causalities", force: :cascade do |t|
     t.integer  "src_id"
@@ -57,6 +57,20 @@ ActiveRecord::Schema.define(version: 20150605090528) do
     t.integer  "dst_id"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
+  end
+
+  create_table "solvability_cons", force: :cascade do |t|
+    t.integer  "solvability_id"
+    t.integer  "user_id"
+    t.datetime "created_at",     null: false
+    t.datetime "updated_at",     null: false
+  end
+
+  create_table "solvability_pros", force: :cascade do |t|
+    t.integer  "solvability_id"
+    t.integer  "user_id"
+    t.datetime "created_at",     null: false
+    t.datetime "updated_at",     null: false
   end
 
   create_table "users", force: :cascade do |t|

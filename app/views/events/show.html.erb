@@ -16,6 +16,10 @@
   <%= @event.user_id %>
 </p>
 
+<%= button_to 'Add Solution', new_event_solvability_path(@event), params: {direction: 'dst'}, method: :get %>
+<%= button_to 'Add Benefit',  new_event_solvability_path(@event), params: {direction: 'src'}, method: :get %>
+
+
 =======
 >>>>>>> origin/using_active_record
 <%= link_to 'Edit', edit_event_path(@event) %> |
