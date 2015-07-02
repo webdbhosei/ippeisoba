@@ -1,4 +1,10 @@
-<h1>New Solvability</h1>
+<% if @direction == 'dst' %>
+  <h1>Post Solution of <%= Event.find(@event_id).title %></h1>
+<% else %>
+  <h1>Post Event that will be solved by <%= Event.find(@event_id).title %></h1>
+<% end %>
+
+
 
 <%= render 'form' %>
 

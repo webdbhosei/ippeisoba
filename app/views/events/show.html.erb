@@ -5,7 +5,6 @@
   <%= @event.title %>
 </p>
 
-<<<<<<< HEAD
 <p>
   <strong>Content:</strong>
   <%= @event.content %>
@@ -16,7 +15,8 @@
   <%= @event.user_id %>
 </p>
 
-=======
->>>>>>> origin/using_active_record
+<%= button_to 'Add Solution', new_event_solvability_path(@event), params: {direction: 'dst'}, method: :get %>
+<%= button_to 'Add Benefit',  new_event_solvability_path(@event), params: {direction: 'src'}, method: :get %>
+
 <%= link_to 'Edit', edit_event_path(@event) %> |
 <%= link_to 'Back', events_path %>

@@ -1,0 +1,14 @@
+<p id="notice"><%= notice %></p>
+
+<p>
+  <strong>Solvability:</strong>
+  <%= @solvability_pro.solvability_id %>
+</p>
+
+<p>
+  <strong>User:</strong>
+  <%= @solvability_pro.user_id %>
+</p>
+
+<%= link_to 'Edit', edit_solvability_pro_path(@solvability_pro) %> |
+<%= link_to 'Back', solvability_pros_path %>
