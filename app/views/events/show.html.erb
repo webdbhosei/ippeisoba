@@ -1,22 +1,68 @@
 <p id="notice"><%= notice %></p>
 
-<p>
-  <strong>Title:</strong>
-  <%= @event.title %>
-</p>
+<table border="1">
+  <thead>
+    <tr>
+      <th>ID</th>
+      <th colspan="2">Title</th>
+      <th>User</th>
+    </tr>
+    <tr>
+      <th colspan="4">Content</th>
+    </tr>
+  </thead>
 
-<p>
-  <strong>Content:</strong>
-  <%= @event.content %>
-</p>
+  <tbody>
+      <tr>
+        <td><%= @event.id %></td>
+        <td colspan="2"><%= @event.title %></td>
+        <td><%= @event.user.email %></td>
+        <td><%= link_to 'Show', @event %></td>
+       </tr>
+       <tr>
+        <td colspan="4"><%= @event.content %></td>
+        <td><%= link_to 'Edit', edit_event_path(@event) %></td>
+        <td><%= link_to 'Destroy', @event, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+       </tr>
+  </tbody>
+</table>
+<br/>
 
-<p>
-  <strong>User:</strong>
-  <%= @event.user_id %>
-</p>
-
-<%= button_to 'Add Solution', new_event_solvability_path(@event), params: {direction: 'dst'}, method: :get %>
+<p>	Benefits: 
+<% if @event.benefits.each do |benefit| %>
+  <%= link_to benefit.title, benefit %>
+<% end.empty? %>
+  <font color="RED">None</font>
+<% end %>
 <%= button_to 'Add Benefit',  new_event_solvability_path(@event), params: {direction: 'src'}, method: :get %>
+</p>
+
+<p>Solutions:       
+<% if @event.solutions.each do |solution| %>
+  <%= link_to solution.title, solution %>
+<% end.empty? %>
+  <font color="RED">None</font>
+<% end %>
+<%= button_to 'Add Solution', new_event_solvability_path(@event), params: {direction: 'dst'}, method: :get %>
+</p>
+
+<p>Risks:     
+<% if @event.risks.each do |risk| %>
+  <%= link_to risk.title, risk %>
+<% end.empty? %>
+  <font color="RED">None</font>
+<% end %>
+</p>
+
+<p>Causes:
+<% if @event.causes.each do |cause| %>
+  <%= link_to cause.title, cause %>
+<% end.empty? %>
+  <font color="RED">None</font>
+<% end %>
+</p>         	
+         	
+<br/>
 
 <%= link_to 'Edit', edit_event_path(@event) %> |
-<%= link_to 'Back', events_path %>
+<%= link_to 'Back', :back %>

@@ -13,52 +13,68 @@
       <th>User</th>
     </tr>
     <tr>
+      <th colspan="4">Content</th>
+    </tr>
+    <tr>
       <th width=150>Benefits</th>
       <th width=150>Solutions</th>
       <th width=150>Risks</th>
       <th width=150>Causes</th>
     </tr>
-    <tr>
-      <th colspan="4">Content</th>
-    </tr>
+    
   </thead>
 
   <tbody>
     <% @events.each do |event| %>
+      <tr><td></td><td></td><td></td><td></td></tr>
       <tr>
         <td><%= event.id %></td>
         <td colspan="2"><%= event.title %></td>
         <td><%= event.user.email %></td>
-       </tr>
-       <tr>
-        <td>
-         	<% event.benefits.each do |benefit| %>
-         	  <%= benefit.title %>
-         	<% end %>
-        </td>
-        <td>
-         	<% event.solutions.each do |solution| %>
-         	  <%= solution.title %>
-         	<% end %>
-        </td>
-        <td>
-         	<% event.risks.each do |risk| %>
-         	  <%= risk.title %>
-         	<% end %>
-        </td>
-        <td>
-         	<% event.causes.each do |cause| %>
-         	  <%= cause.title %>
-         	<% end %>
-        </td>
+        <td><%= link_to 'Show', event %></td>
        </tr>
        <tr>
         <td colspan="4"><%= event.content %></td>
-       </tr>
-       <tr>
-        <td><%= link_to 'Show', event %></td>
         <td><%= link_to 'Edit', edit_event_path(event) %></td>
         <td><%= link_to 'Destroy', event, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+       </tr>
+       <tr>
+        <td>
+         	<% if event.benefits.each do |benefit| %>
+         	  <%= link_to benefit.title, benefit %>
+         	  <br/>
+         	<% end.empty? %>
+         	  <font color="RED">None</font>
+         	<% end %>
+        </td>
+        <td>
+         	<% if event.solutions.each do |solution| %>
+         	  <%= link_to solution.title, solution %>
+         	  <br/>
+         	<% end.empty? %>
+         	  <font color="RED">None</font>
+         	<% end %>
+        </td>
+        <td>
+         	<% if event.risks.each do |risk| %>
+         	  <%= link_to risk.title, risk %>
+         	  <br/>
+         	<% end.empty? %>
+         	  <font color="RED">None</font>
+         	<% end %>
+        </td>
+        <td>
+         	<% if event.causes.each do |cause| %>
+         	  <%= link_to cause.title, cause %>
+         	  <br/>
+         	<% end.empty? %>
+         	  <font color="RED">None</font>
+         	<% end %>
+        </td>
+       </tr>
+       <tr>
+        <td align="center"><%= button_to 'Add Benefit',  new_event_solvability_path(event), params: {direction: 'src'}, method: :get %></td>
+        <td align="center"><%= button_to 'Add Solution', new_event_solvability_path(event), params: {direction: 'dst'}, method: :get %></td>
       </tr>
     <% end %>
   </tbody>

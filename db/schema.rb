@@ -20,14 +20,6 @@ ActiveRecord::Schema.define(version: 20150625050959) do
     t.datetime "updated_at", null: false
   end
 
-  create_table "causes", force: :cascade do |t|
-    t.integer  "event_id"
-    t.integer  "cause_id"
-    t.text     "content"
-    t.datetime "created_at", null: false
-    t.datetime "updated_at", null: false
-  end
-
   create_table "events", force: :cascade do |t|
     t.string   "title"
     t.text     "content"
