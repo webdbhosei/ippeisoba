@@ -8,8 +8,10 @@ Rails.application.routes.draw do
   resources :solvabilities
 # resources :events
   resources :events do resources :solvabilities end # nested resources
+  resources :events do resources :causalities end # nested resources
   devise_for :users
   get 'welcome/index'
+  put 'causality/_form'
 
   # The priority is based upon order of creation: first created -> highest priority.
   # See how all your routes lay out with "rake routes".

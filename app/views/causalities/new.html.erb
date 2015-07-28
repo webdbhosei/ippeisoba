@@ -1,5 +1,9 @@
-<h1>New Causality</h1>
+<% if @direction == 'dst' %>
+  <h1>Post Cause of <%= Event.find(@event_id).title %></h1>
+<% else %>
+  <h1>Post Event that will be caused by <%= Event.find(@event_id).title %></h1>
+<% end %>
 
 <%= render 'form' %>
 
-<%= link_to 'Back', causalities_path %>
+<%= link_to 'Back', :back %>

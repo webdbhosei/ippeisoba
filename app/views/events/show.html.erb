@@ -52,6 +52,7 @@
 <% end.empty? %>
   <font color="RED">None</font>
 <% end %>
+<%= button_to 'Add Risk',  new_event_causality_path(@event), params: {direction: 'src'}, method: :get %>
 </p>
 
 <p>Causes:
@@ -60,6 +61,7 @@
 <% end.empty? %>
   <font color="RED">None</font>
 <% end %>
+<%= button_to 'Add Cause',  new_event_causality_path(@event), params: {direction: 'dst'}, method: :get %>
 </p>         	
          	
 <br/>

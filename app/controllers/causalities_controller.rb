@@ -16,6 +16,9 @@ class CausalitiesController < ApplicationController
   # GET /causalities/new
   def new
     @causality = Causality.new
+    @event_id  = params[:event_id]
+    @direction = params[:direction]
+    #@input = params[:input] 
   end
 
   # GET /causalities/1/edit
@@ -59,6 +62,16 @@ class CausalitiesController < ApplicationController
     respond_to do |format|
       format.html { redirect_to causalities_url, notice: 'Causality was successfully destroyed.' }
       format.json { head :no_content }
+    end
+  end
+  
+  # GET /causalities/1
+  # GET /causalities/1.json
+  def search
+   # events = params[:event]
+    @causality.search
+    respond_to do |format|
+      @hoges = Hoge.where("name LIKE ?", "%#{params[:event_id]}%")
     end
   end
 
