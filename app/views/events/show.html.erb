@@ -28,7 +28,7 @@
 </table>
 <br/>
 
-<p>	Benefits: 
+<p class="relations">	Benefits: 
 <% if @event.benefits.each do |benefit| %>
   <%= link_to benefit.title, benefit %>
 <% end.empty? %>
@@ -37,7 +37,7 @@
 <%= button_to 'Add Benefit',  new_event_solvability_path(@event), params: {direction: 'src'}, method: :get %>
 </p>
 
-<p>Solutions:       
+<p class="relations">Solutions:       
 <% if @event.solutions.each do |solution| %>
   <%= link_to solution.title, solution %>
 <% end.empty? %>
@@ -46,7 +46,7 @@
 <%= button_to 'Add Solution', new_event_solvability_path(@event), params: {direction: 'dst'}, method: :get %>
 </p>
 
-<p>Risks:     
+<p class="relations">Risks:     
 <% if @event.risks.each do |risk| %>
   <%= link_to risk.title, risk %>
 <% end.empty? %>
@@ -55,7 +55,7 @@
 <%= button_to 'Add Risk',  new_event_causality_path(@event), params: {direction: 'src'}, method: :get %>
 </p>
 
-<p>Causes:
+<p class="relations">Causes:
 <% if @event.causes.each do |cause| %>
   <%= link_to cause.title, cause %>
 <% end.empty? %>
